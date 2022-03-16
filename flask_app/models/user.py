@@ -58,26 +58,7 @@ class User:
             flash('Passwords do not match.', "register")
         return is_valid 
     
-    # @staticmethod
-    # def validate_login(user):
-    #     is_valid = True
-    #     query = 'SELECT users.email FROM users WHERE email = %(email)s;'
-    #     results = connectToMySQL(User.db).query_db(query,user)
-    #     print(f'printing results: {results}')
-    #     if len(results) < 1:
-    #         is_valid = False
-    #         flash("Email not found in database.")
-    #     if not EMAIL_REGEX.match(user['email']):
-    #         is_valid = False
-    #         flash("Invalid email format")
-    #     if len(user['email']) < 1:
-    #         flash("Email address required.")
-    #         is_valid = False
-    #     if len(user['password']) < 8 :
-    #         flash("Password must be at least  8 characters long.")
-    #         is_valid = False  
-    #     return is_valid 
-    
+  
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM users;"
